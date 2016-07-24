@@ -1,41 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" href="money.ico" type="image/x-icon" />
-<title>D &amp; M Financial Advising - Your Complete Financial Center</title>
-<link href="styles.css" rel="stylesheet" type="text/css">
-
-<meta name="keywords" content="calculator, money, finances, advisor, financial">
-<meta name="description" content="D &amp; M Financial Advising is a premier financial advising company for both business and personal finances.">
+   <meta charset="utf-8">
+   <title>Employee Database</title>
+   <link href="style.css" rel="stylesheet" type="text/css">
+   <script src = "employee.js">  </script>
 </head>
 <body>
-	<div class="gridContainer clearfix">
-<div id="content" class="fluid">
-  <header class="fluid header_div"></header>
-		  <div class="fluid intro_paragraph">
-
-	        <p><nav class="fluid menu_bar">
-	          <ul>
-	            <li><a href="index.html">Home</a></li>
-	            <li><a href="Calculator.html">Calculator</a></li>
-              </ul>
-	        </nav>
-	        <p class="body_text">Welcome to D &amp; M Financial Advising. We offer a variety of financial planning and advising plans to suit your needs. Our plans  are full of excellent ways to help you learn how to make your money work for you. Our advisors are just waiting to help you attain your financial goals. We are committed to helping our clients achieve their financial goals and live their ideal calendars. Our approach is client-centered, not product-centered. You will find in us a trustful partner to help you achieve your financial goals.</p>
-	        <p class="body_text">Our planners and staff hold various degrees and specialty licenses such as Certified Public Accountant (CPA), Certified Financial Planner ™ practitioner (CFP®), Personal Financial Specialist (PFS) or Masters Degrees. The firm is a registered investment advisor with the State of California.</p>
-            <p class="body_text"><span class="contact_info">D &amp; M<br>
-            1900 Pico Blvd.<br>
-            Santa Monica, CA
-          90405<br>
-            555-248-0806<br>
-            <a href="mailto:mailbox_@dm_finances.com">Customer Service</a></span> </p>
-		  </div>
-</div>
-<div class="fluid footer_div"><span class="small_text">Copyright 2002 - 2016<br>
-Last updated on
-    <!-- #BeginDate format:Am1 -->July 21, 2016<!-- #EndDate --></span></div>
-</div>
+	<div class = "nav">
+		<input id = "employeeDatabaseButton" type = "button" 
+		value = "Employees" onClick = "showDatabase()">
+			
+		<input id = "addEntryButton" type = "button" 
+		value = "Add an Entry" onClick = "showAddEmployeeForm()">
+			
+		<input id = "calculateRevenueButton" type = "button" 
+		value = "Monthly Revenue" onClick = "showRevenueForm()">
+		
+		<input id = "searchEmployee" type = "button" 
+		value = "Search" onClick = "showSearchForm()">
+	</div>	
+	<p></p>
+   
+	<div id = "databaseEmployees" style = "display : none">
+		<div id = "Database" text-align = "center"></div>
+		<div id = "comment" text-align =  "center"></div>
+	</div>
+   
+	<div id = "search" style = "display : none">
+		<p><label>By Name:</label> <input id = "searchInput" onkeyup = "searchEmployee()"></p>
+		<p><div id = "Names"></div></p>
+	</div>
+    
+    
+	<div id = "addEntry" style = "display : none">
+		<p><label>First Name:</label> <input id = "first" type = "text"></p>
+		<p><label>Last Name:</label> <input id = "last" type = "text"></p>
+		<p><label>Hours:</label> <input id = "hours" type = "number" value = "0"></p>
+		<p><label>Hourly Pay:</label> <input id = "hourly" type = "number"></p>
+		<p><input type = "button" value = "Add" onClick = "addEmployee()" ></p>
+		<p id = "addResponse"></p>		
+	</div>
+   
+    <div id = "revenue" style = "display : none">
+      <p><label>Gross Income:</label> <input id = "income"></p>
+	  <p><label>Fixed Costs:</label> <input id = "costs"></p>
+      <p><input id = "incomeSubmitButton" type = "button" value = "Calculate" onClick = "calcRevenue()"></p>
+      <div id = "calculatedRevenue"></div>
+   </div>
 </body>
 </html>
-
